@@ -196,7 +196,7 @@ class Rule
         $this->setTimezone($timezone);
 
         if (!$startDate instanceof \DateTime) {
-            $startDate  = new \DateTime($startDate, new \DateTimeZone($timezone));
+            $startDate  = new \DateTime($startDate ?? 'now', new \DateTimeZone($timezone));
         }
 
         $this->setStartDate($startDate);
